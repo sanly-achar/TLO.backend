@@ -1,0 +1,354 @@
+{% extends 'ru_base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+
+
+<section class="slide1">
+    <div class="wrap-slick1">
+        <div class="slick1">
+
+
+            {% for i in slider %}
+            <div class="item-slick1 item3-slick1" style="background-image: url({{i.image.url}});">
+                <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
+
+
+                    <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37"
+                        data-appear="rotateInUpRight">
+                        {{i.title}}
+                    </h2>
+                    
+
+                    
+
+                    
+                </div>
+            </div>
+
+            {% endfor %}
+
+
+
+        </div>
+    </div>
+</section>
+
+
+<section class="banner bgwhite p-t-40 p-b-40">
+    <div class="container">
+        <div class="row">
+            {% for i in main_page %}
+            <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
+                <div class="block1 hov-img-zoom pos-relative m-b-30">
+                    <img src="{{i.image_1.url}}" alt="IMG-BENNER">
+
+                    <div class="block1-wrapbtn w-size2">
+
+
+                    </div>
+                </div>
+
+                <!-- block1 -->
+                <div class="block1 hov-img-zoom pos-relative m-b-30">
+                    <img src="{{i.image_2.url}}" alt="IMG-BENNER">
+
+                    <div class="block1-wrapbtn w-size2">
+                        <!-- Button -->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
+                <!-- block1 -->
+                <div class="block1 hov-img-zoom pos-relative m-b-30">
+                    <img src="{{i.image_4.url}}" alt="IMG-BENNER">
+
+                    <div class="block1-wrapbtn w-size2">
+                        <!-- Button -->
+
+                    </div>
+                </div>
+
+                <!-- block1 -->
+                <div class="block1 hov-img-zoom pos-relative m-b-30">
+                    <img src="{{i.image_3.url}}" alt="IMG-BENNER">
+
+                    <div class="block1-wrapbtn w-size2">
+                        <!-- Button -->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
+                <!-- block1 -->
+                <div class="block1 hov-img-zoom pos-relative m-b-30">
+                    <img src="{{i.image_5.url}}" alt="IMG-BENNER">
+
+                    <div class="block1-wrapbtn w-size2">
+                        <!-- Button -->
+
+                    </div>
+                </div>
+
+                <!-- block2 -->
+                <div class="block2 wrap-pic-w pos-relative m-b-30">
+                    <img src="{% static 'images/icons/bg-01.jpg' %}" alt="IMG">
+
+                    <div class="block2-content sizefull ab-t-l flex-col-c-m">
+                        <h4 class="m-text4 t-center w-size3 p-b-8">
+                            Мы предлагаем:
+
+                        </h4>
+
+                        <p class="t-center w-size4">
+                            Высококачественную продукцию от производителя </p>
+
+                        <div class="w-size2 p-t-25">
+                            <!-- Button -->
+                            <a href="TEL:+99365894211" class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
+                                Заказать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+</section>
+
+
+<section class="newproduct bgwhite p-t-45 p-b-105">
+    <div class="container">
+        <div class="sec-title p-b-60">
+            <h3 class="m-text5 t-center">
+                Новинки компании
+            </h3>
+        </div>
+
+        <!-- Slide2 -->
+        <div class="wrap-slick2">
+            <div class="slick2">
+
+                {% for i in new_product %}
+                <div class="item-slick2 p-l-15 p-r-15">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-img wrap-pic-w of-hidden pos-relative block2">
+                            <img src="{{i.main_image.url}}" alt="IMG-PRODUCT">
+                        </div>
+
+
+                    </div>
+                </div>
+                {% endfor %}
+
+                
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+</section>
+
+
+
+
+
+<section class="banner2 bg5 p-t-55 p-b-55">
+    <div class="container">
+        <div class="row">
+            
+            {% for i in info %}
+            <div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
+                <div class="bgwhite hov-img-zoom pos-relative p-b-20per-ssm">
+                    <img src="{{i.image.url}}" alt="IMG-BANNER">
+
+                    <div class="ab-t-l sizefull flex-col-c-b p-l-15 p-r-15 p-b-20">
+                        <div class="t-center">
+                            <a class="dis-block s-text3 p-b-5" style="color: #fff;">
+                                {{i.title}}
+                            </a>
+                            <a class="dis-block s-text3 p-b-5" style="color: #fff;">
+                               {{i.desc}}
+                            </a>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="newproduct bgwhite p-t-45 p-b-105">
+    <div class="container">
+        <div class="sec-title p-b-60">
+            <h3 class="m-text5 t-center">
+                Скидочные товары компании
+            </h3>
+        </div>
+
+        <!-- Slide2 -->
+        <div class="wrap-slick2">
+            <div class="slick2">
+
+                {% for i in sale_product %}
+                <div class="item-slick2 p-l-15 p-r-15">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-img wrap-pic-w of-hidden pos-relative block2">
+                            <img src="{{i.main_image.url}}" alt="IMG-PRODUCT">
+                        </div>
+
+
+                    </div>
+                </div>
+                {% endfor %}
+
+                
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+</section>
+
+
+<section class="blog bgwhite p-t-94 p-b-65">
+    <div class="container">
+        <div class="sec-title p-b-52">
+            <h3 class="m-text5 t-center">
+                Новости компании
+            </h3>
+        </div>
+
+        <div class="row">
+            {% for i in news %}
+            <div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
+                <!-- Block3 -->
+                <div class="block3">
+                    <a class="block3-img dis-block hov-img-zoom">
+                        <img src="{{i.image.url}}" alt="IMG-BLOG">
+                    </a>
+
+                    <div class="block3-txt p-t-14">
+                        <h4 class="p-b-7" >
+                            <a class="m-text11" >
+                                {{i.title}}
+                            </a>
+                        </h4>
+
+
+                        <p class="s-text8 p-t-16" style="text-align: center;">
+                           {{i.desc}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="shipping bgwhite p-t-62 p-b-46">
+    <div class="flex-w p-l-15 p-r-15">
+        <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
+            <h4 class="m-text12 t-center">
+                Гарантия качества
+            </h4>
+
+
+        </div>
+
+        <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 bo2 respon2">
+            <h4 class="m-text12 t-center">
+                Индивидуальный подход
+            </h4>
+
+
+        </div>
+
+        <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
+            <h4 class="m-text12 t-center">
+                Напрямую от производителя
+            </h4>
+
+
+        </div>
+    </div>
+</section>
+
+
+<section class="bgwhite p-t-66 p-b-60">
+    <div class="container">
+        <div class="row">
+
+
+
+            <div class="col-md-12 p-b-30"
+                style="background-color:#fd7e14a1; border-radius: 10px; box-shadow: 0 5px 50px 5px #fd69149f ;">
+                <form class="leave-comment" method="POST">
+                    <h4 class="m-text26 p-b-36 p-t-15">
+                        Напишите нам
+                    </h4>
+                    {% csrf_token %}
+                    {{ form }}
+                    <!-- <div class="bo4 of-hidden size15 m-b-20">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="name" placeholder="Имя">
+                    </div>
+
+                    <div class="bo4 of-hidden size15 m-b-20">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="phone-number"
+                            placeholder="Телефонный Номер">
+                    </div>
+
+                    <div class="bo4 of-hidden size15 m-b-20">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email"
+                            placeholder="Электронный адрес">
+                    </div>
+
+                    <textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13 m-b-20" name="message"
+                        placeholder="Сообщение"></textarea> -->
+
+                    <div class="w-size25">
+
+                        <button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4 btn" style="margin-top: 5px;"
+                            type="submit">
+                            Отправить
+                        </button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

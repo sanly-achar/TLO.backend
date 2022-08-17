@@ -1,0 +1,182 @@
+{% extends 'ru_base.html' %}
+
+{% load static %}
+{% block content %}
+
+    {% for i in about %}
+
+        <section class="slide1">
+            <div class="wrap-slick1">
+                <div class="slick1">
+
+
+                    
+                    
+                    <div class="item-slick1 item3-slick1" style="background-image: url({{i.image.url}});">
+                        <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
+
+
+                            <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37"
+                                data-appear="rotateInUpRight">
+                                
+                                
+                            </h2>
+                            
+
+                            
+
+                            
+                        </div>
+                    </div>
+
+                   
+                    
+
+
+
+                </div>
+            </div>
+        </section>
+
+
+		<!-- Page Title
+		============================================= -->
+		<section id="page-title">
+
+			<div class="container clearfix">
+				<h1>О КОМПАНИИ</h1>
+				
+			</div>
+
+		</section><!-- #page-title end -->
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+
+					<div class="single-post mb-0">
+
+						
+
+						<div class="row gutter-40 col-mb-80">
+							<!-- Post Content
+							============================================= -->
+							<div class="postcontent col-lg-12">
+
+								<!-- Single Post
+								============================================= -->
+								<div class="entry clearfix">
+
+									<!-- Entry Title
+									============================================= -->
+									<div class="entry-title">
+										<h2>{{i.name}}</h2>
+									</div><!-- .entry-title end -->
+
+									
+									
+
+									<!-- Entry Content
+									============================================= -->
+									<div class="entry-content mt-0">
+
+
+										<p>{{i.mini_title}}</p>
+
+										<blockquote><p>{{i.title}}</p></blockquote>
+
+
+
+
+
+										<p style="text-align: center; font-size: 22px; color: #000;">{{i.desc}}</p>
+										<!-- Post Single - Content End -->
+
+										
+
+										<div class="clear"></div>
+
+										<!-- Post Single - Share
+										============================================= -->
+										<div class="si-share border-0 d-flex justify-content-between align-items-center">
+											<span>Социальные сети:</span>
+											<div>
+												<a href="{{i.facebook}}" class="social-icon si-borderless si-facebook">
+													<i class="icon-facebook"></i>
+													<i class="icon-facebook"></i>
+												</a>
+
+												<a href="{{i.gmail}}" class="social-icon si-borderless si-gmail">
+													<i class="icon-gmail"></i>
+													<i class="icon-gmail"></i>
+												</a>
+
+                                                <a href="{{i.instagram}}" class="social-icon si-borderless si-instagram">
+													<i class="icon-instagram"></i>
+													<i class="icon-instagram"></i>
+												</a>
+
+                                                <a href="{{i.whatsapp}}" class="social-icon si-borderless si-whatsapp">
+													<i class="icon-whatsapp"></i>
+													<i class="icon-whatsapp"></i>
+                                                </a>
+
+												<a href="{{i.mail}}" class="social-icon si-borderless si-mail">
+													<i class="icon-mail"></i>
+													<i class="icon-mail"></i>
+												</a>
+												
+												<a href="{{i.yandex}}" class="social-icon si-borderless si-yandex">
+													<i class="icon-yandex"></i>
+													<i class="icon-yandex"></i>
+												</a>
+
+												<a href="#" class="social-icon si-borderless si-linkedin">
+													<i class="icon-linkedin"></i>
+													<i class="icon-linkedin"></i>
+												</a>
+
+												<a href="#" class="social-icon si-borderless si-vk">
+													<i class="icon-vk"></i>
+													<i class="icon-vk"></i>
+												</a>
+
+												<a href="#" class="social-icon si-borderless si-odnoklassniki">
+													<i class="icon-odnoklassniki"></i>
+													<i class="icon-odnoklassniki"></i>
+												</a>
+
+												
+												
+											</div>
+										</div><!-- Post Single - Share End -->
+
+									</div>
+								</div><!-- .entry end -->
+
+								
+
+								<div class="line"></div>
+
+								
+
+								
+
+						
+
+							</div><!-- .postcontent end -->
+
+							
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</section><!-- #content end -->
+
+    {% endfor %}
+
+{% endblock %}

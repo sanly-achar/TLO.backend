@@ -1,0 +1,119 @@
+{% extends 'ru_base.html' %}
+
+{% load static %}
+{% block content %}
+
+<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url({% static './tayyn/about/banner.webp' %});">
+
+    <h2 class="l-text2 t-center">
+        Контакты
+    </h2>
+
+</section>
+
+
+{% for i in contact %}
+<!-- content page -->
+<section class="bgwhite p-t-66 p-b-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 p-b-30">
+                <div class="map_link">
+                    <div>
+                        <iframe class="map"
+                            src="{{i.map}}"
+                            width="550" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- <div class="contact-map size21" id="google_map" data-map-x="40.614439" data-map-y="-73.926781"
+                            data-pin="images/icons/icon-position-map.png" data-scrollwhell="0" data-draggable="1"></div> -->
+                    </div>
+                    <ul>
+                        <li class="p-t-6 p-b-8 bo6">
+                            <a class="s-text13 p-t-5 p-b-5">
+                                <p style="font-weight: 700; color: #000; text-align: center;">Адрес: </p>
+                                <p>{{i.address}} </p>
+                            </a>
+                        </li>
+
+                        <li class="p-t-6 p-b-8 bo6">
+                            <a class="s-text13 p-t-5 p-b-5">
+                                <p style="font-weight: 700; color: #000; text-align: center;">Мобильный: </p>
+                                <p>{{i.phone}}</p>
+                            </a>
+                        </li>
+
+                        <li class="p-t-6 p-b-8 bo6">
+                            <a class="s-text13 p-t-5 p-b-5">
+                                <p style="font-weight: 700; color: #000; text-align: center;">Почта: </p>
+                                <a href="mailto:TLO002@yandex.ru">{{i.email}}</a>
+                                <br>
+                                <a href="mailto:TLO002KM@gmail.com">{{i.email_2}}</a>
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 p-b-30" >
+                <form class="leave-comment"  method="POST">
+                    <h4 class="m-text26 p-b-36 p-t-15">
+                        Напишите нам
+                    </h4>
+                    {% csrf_token %}
+
+                    <div class="bo4 of-hidden size15 m-b-20">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="name" placeholder="Имя">
+                    </div>
+
+                    <div class="bo4 of-hidden size15 m-b-20">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="phone_number"
+                            placeholder="Телефонный Номер">
+                    </div>
+
+                    <div class="bo4 of-hidden size15 m-b-20">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email"
+                            placeholder="Электронный адрес">
+                    </div>
+
+                    <textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13 m-b-20" name="message"
+                        placeholder="Сообщение"></textarea>
+
+                    <div class="w-size25">
+                        <!-- Button -->
+                        <button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4 btn" type="submit">
+                            Отправить
+                        </button>
+                    </div>
+
+                    <ul style="margin-top: 5%;">
+                        <li class="p-t-6 p-b-8 bo6">
+                            <a class="s-text13 p-t-5 p-b-5">
+                                <p style="font-weight: 700; color: #000; text-align: center;">Банковские реквизиты:
+                                    АКБ</p>
+                                <p>{{i.bank_name}}</p>
+                            </a>
+                        </li>
+
+                        <li class="p-t-6 p-b-8 bo6">
+                            <a class="s-text13 p-t-5 p-b-5">
+                                <p style="font-weight: 700; color: #000; text-align: center;">Расчетный счет USD:
+                                </p>
+                                <p>{{i.bank_recw_usd}}</p>
+                                <p style="font-weight: 700; color: #000; text-align: center;">Расчетный счет EUR:
+                                </p>
+                                <p>{{i.bank_recw_eur}} </p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+{% endblock %}

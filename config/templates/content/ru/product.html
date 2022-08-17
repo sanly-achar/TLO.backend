@@ -1,0 +1,56 @@
+{% extends 'ru_base.html' %}
+
+{% load static %}
+{% block content %}
+
+		<!-- Page Title
+		============================================= -->
+		<section id="page-title">
+
+			<div class="container clearfix">
+				<h1>ПРОДУКЦИЯ КОМПАНИИ</h1>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/">Главная</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Продукция</li>
+				</ol>
+			</div>
+
+		</section>
+
+	
+		<section id="content" >
+			<div class="content-wrap">
+				<div class="container clearfix">
+					<div class="container" style="margin-bottom: 30%;">
+						<div id="section-wheel" class="page-section">
+							<div class="heading-block center section border-bottom-0 py-5 mt-0">
+								<h3 class="highlight-me px-2 d-inline-block">Категории</h3>
+							</div>
+							<div id="oc-wheel" class="owl-carousel shop-carousel carousel-widget" data-margin="30" data-nav="true" data-pagi="false" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4" data-autoplay="5000">
+                                
+                                {% for i in category %}
+
+								<div class="product center">
+									<div class="product-image px-1 py-1">
+										<a href="{% url 'product_detail' i.id %}"><img src="{{i.image.url}}" alt="Image"></a>
+									</div>
+	
+									<div class="product-desc">
+										<div class="product-title"><h3><a href="{% url 'product_detail' i.id %}" style="">{{i.name}}</a></h3></div>
+										<a href="{% url 'product_detail' i.id %}" class="button button-rounded button-small m-0"><i class="fa fa-bars"></i> Подробнее</a>
+									</div>
+								</div>
+
+                                {% endfor %}
+	
+								
+	
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+    
+{% endblock %}

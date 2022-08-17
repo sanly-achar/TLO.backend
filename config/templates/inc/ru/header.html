@@ -1,0 +1,168 @@
+{% load static %}
+
+
+
+<header class="header1">
+	<!-- Header desktop -->
+	<div class="container-menu-header">
+
+		<div class="wrap_header">
+			<!-- Logo -->
+			<a href="." class="logo">
+				{% for i in contact %}
+
+				<img src="{{ i.logo.url }}" alt="IMG-LOGO">
+				{% endfor %}
+			</a>
+
+			<!-- Menu -->
+			<div class="wrap_menu">
+				<nav class="primary-menu">
+					<ul class="main_menu">
+
+
+						<li class="menu-item" style="background-color: #fd7e14;
+							border-radius: 5px;
+							padding-left: 40px;
+							padding-right: 40px;
+						">
+							<a class="menu-link" href="{% url 'all_products' %}" style="color: #fff;">Продукция</a>
+							<ul class="sub-menu-container">
+
+								{% for i in category %}
+								<li class="menu-item">
+									<a class="menu-link" href="{% url 'product_detail' i.id %}">
+										<div>{{i.name}}</div>
+									</a>
+								</li>
+								{% endfor %}
+
+							</ul>
+						</li>
+
+
+						<li>
+							<a href="/">Главная</a>
+						</li>
+
+						<li>
+							<a href="{% url 'about_us' %}">
+								О компании</a>
+						</li>
+
+
+
+						<li>
+							<a href="{% url 'contact' %}">
+								Контакты</a>
+						</li>
+						<li>
+							{% for i in contact %}
+							<a href="{{i.link.url}}" download="{{i.link.url}}">
+								Скачать Прайс Лист</a>
+							{%  endfor %}
+						</li>
+
+
+
+					</ul>
+
+
+				</nav>
+			</div>
+			<div>
+				<a class="default" href="/">
+					<img class="active_flag" width="40px" src="{% static './tayyn/russia.ico' %}" alt="IMG-BLOG">
+				</a>
+
+				<a class="default" href="/eng/">
+					<img class="noactive_flag" width="40px" src="{% static './tayyn/englnd.png' %}" alt="IMG-BLOG"></a>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Header Mobile -->
+	<div class="wrap_header_mobile">
+		<!-- Logo moblie -->
+		<a href="index.html" class="logo-mobile">
+			<img src="{% static './tayyn/logo.webp' %}" width="60px" alt="IMG-LOGO">
+		</a>
+
+
+		<!-- Button show menu -->
+		<div class="btn-show-menu">
+
+			<!-- Header Icon mobile -->
+			<div class="header-icons-mobile">
+
+				<span class="linedivide2"></span>
+
+				<div class="header-wrapicon2">
+
+				</div>
+			</div>
+
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Menu Mobile -->
+	<div class="wrap-side-menu">
+		<nav class="side-menu">
+			<ul class="main-menu">
+
+				<li class="menu-item">
+					<a class="menu-link" href="product_2.html" style="color: #000; background-color: #e65540;">Продукция
+					</a>
+					<ul class="sub-menu-container">
+						{% for i in category %}
+							<li class="menu-item">
+								<a class="menu-link" href="{% url 'product_detail' i.id %}">
+										<div>{{i.name}}</div>
+								</a>
+							</li>
+						{% endfor %}
+
+					</ul>
+				</li>
+				<li class="item-menu-mobile">
+					<a href="/">Главная</a>
+				</li>
+
+				<li class="item-menu-mobile">
+					<a href="{% url 'all_products' %}">Продукция</a>
+				</li>
+
+				<li class="item-menu-mobile">
+					<a href="{% url 'about_us' %}">О компании</a>
+				</li>
+
+				
+				<li class="item-menu-mobile">
+					<a href="{% url 'contact' %}">Контакты</a>
+				</li>
+
+				{% for i in contact %}
+							<a href="{{i.link.url}}" download="{{i.link.url}}">
+								Скачать Прайс Лист</a>
+				{%  endfor %}
+
+				<div style="margin-top: 10px; margin-bottom: 10px">
+					<a class="default" href="/">
+						<img class="active_flag" width="40px" src="{% static './tayyn/russia.ico' %}" alt="IMG-BLOG">
+					</a>
+
+					<a class="default" href="/eng/">
+						<img class="noactive_flag" width="40px" src="{% static './tayyn/englnd.png' %}" alt="IMG-BLOG"></a>
+
+				</div>
+
+			</ul>
+		</nav>
+	</div>
+</header>

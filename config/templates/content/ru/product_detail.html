@@ -1,0 +1,168 @@
+{% extends 'ru_base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+<section id="page-title">
+
+    <div class="container clearfix">
+        <h1>ПРОДУКЦИЯ КОМПАНИИ</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Главная</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Продукция</li>
+        </ol>
+    </div>
+
+</section><!-- #page-title end -->
+
+
+
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            {% for i in product %}
+
+            <div class="single-product">
+                <div class="product">
+                    <div class="row gutter-40">
+
+                        <div class="col-md-6">
+
+                            <!-- Product Single - Gallery
+                            ============================================= -->
+                            <div class="product-image">
+                                <div class="fslider" data-pagi="false" data-arrows="false" data-thumbs="true">
+                                    <div class="flexslider">
+                                        <div class="slider-wrap" data-lightbox="gallery">
+                                            {% if i.main_image %}
+                                            <div class="slide" data-thumb="{{i.main_image.url}}"><a
+                                                    href="{{i.main_image.url}}"
+                                                    title="{{i.name}}"
+                                                    data-lightbox="gallery-item"><img
+                                                        src="{{i.main_image.url}}"
+                                                        alt="Pink Printed Dress"></a>
+                                            </div>
+                                            {% endif %}
+
+                                            {% if i.second_image %}
+
+                                            <div class="slide" data-thumb="{{i.second_image.url}}"><a
+                                                    href="{{i.second_image.url}}"
+                                                    title="{{i.name}}"
+                                                    data-lightbox="gallery-item"><img
+                                                        src="{{i.second_image.url}}"
+                                                        alt="Pink Printed Dress"></a>
+                                            </div>
+                                            {% endif %}
+
+                                            {% if i.three_image %}
+
+                                            <div class="slide" data-thumb="{{i.three_image.url}}"><a
+                                                    href="{{i.three_image.url}}"
+                                                    title="{{i.name}}"
+                                                    data-lightbox="gallery-item"><img
+                                                        src="{{i.three_image.url}}"
+                                                        alt="Pink Printed Dress"></a>
+                                            </div>
+                                            {% endif %}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- Product Single - Gallery End -->
+
+                        </div>
+
+                        <div class="col-md-6 product-desc">
+
+                            <div class="d-flex align-items-center justify-content-between">
+
+                                <!-- Product Single - Price
+                                ============================================= -->
+                                <div class="product-price"><ins>{{i.name}}</ins></div>
+                                <!-- Product Single - Price End -->
+
+                                <!-- Product Single - Rating
+                                ============================================= -->
+                                <div class="d-flex align-items-center">
+
+                                </div>
+
+                            </div>
+
+                            <div class="line"></div>
+
+
+
+                            <button type="submit" class="add-to-cart button m-0"><a href="{{i.link}}" download="">скачать
+                                    price list</a></button>
+
+                            <div class="line"></div>
+
+                            <!-- Product Single - Short Description
+                            ============================================= -->
+                            <p>{{i.title}}</p>
+
+                            <ul class="list-group list-group-flush">
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    <span class="text-muted" >Категория :</span><span
+                                        class="text-dark font-weight-semibold">{{i.category}}</span>
+                                </li>
+                                <form class="leave-comment" method="POST" style="margin-top: 15px;">
+                                    {% csrf_token %}
+
+                                    <input type="hidden" name="product_id" value="{{i.id}}">
+
+                                    <div class="bo4 of-hidden size15 m-b-20">
+                                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="name"
+                                            placeholder="Имя">
+                                    </div>
+
+                                    <div class="bo4 of-hidden size15 m-b-20">
+                                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text"
+                                            name="phone_number" placeholder="Телефонный Номер">
+                                    </div>
+
+                                    <div class="bo4 of-hidden size15 m-b-20">
+                                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email"
+                                            placeholder="Электронный адрес">
+                                    </div>
+
+                                    <textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13 m-b-20"
+                                        name="message" placeholder="Сообщение"></textarea>
+
+                                    <div class="w-size25">
+                                        <!-- Button -->
+                                        <button type="submit" class="add-to-cart button m-0">Заказать
+                                            </button>
+                                    </div>
+
+
+
+                                </form>
+
+                            </ul>
+
+
+
+                        </div>
+
+                        <div class="w-100"></div>
+
+                       
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="line"></div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
